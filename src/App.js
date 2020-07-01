@@ -12,7 +12,7 @@ class App extends React.Component {
   componentDidMount() {
     axios.get('http://localhost:3000/photos')
       .then(response => {
-       console.log(response.data.photos.photo);
+        //console.log(response.data.photos.photo);
         this.setState({
           data: response.data.photos.photo
         })
@@ -22,12 +22,16 @@ class App extends React.Component {
     let photos = this.state.data;
     return (
       <div className="App">
-        
-        <div className="row">
-          {/* <div className="col s6"><img src="" alt={photo.title}/></div> */}
-          <div className="col s6">{photos.map(photo => <p key={photo.id}>{photo.title}</p> )}</div>
-        </div>
-     
+        {photos.map(photo =>
+          <div className="row" key={photo.id}>
+            <div className="col s6">
+              <img src={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`} alt={photo.title} />
+            </div>
+            <div className="col s6">
+              <p>{photo.title}</p>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
