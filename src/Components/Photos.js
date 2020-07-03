@@ -28,7 +28,7 @@ class Photos extends React.Component {
         if (pages <= page) {
             return
         }
-        const lastItem = document.querySelector('.row:last-of-type');
+        const lastItem = document.querySelector('.col:last-of-type');
         const lastItemOffset = lastItem.offsetTop + lastItem.clientHeight
         const pageOffset = window.pageYOffset + window.innerHeight
         let bottomOffset = 20
@@ -39,10 +39,10 @@ class Photos extends React.Component {
 
     loadPhotos = () => {
         const { perpage, page, photos } = this.state;
-        axios.get(`http://localhost:3000/photos`)
-            //axios.get(`https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=00ac5f70d662304b87e7da585bbdef9d&gallery_id=72157713970734808&per_page=${perpage}&page=${page}&format=json&nojsoncallback=1`)
+        //axios.get(`http://localhost:3000/photos`)
+            axios.get(`https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=00ac5f70d662304b87e7da585bbdef9d&gallery_id=72157713970734808&per_page=${perpage}&page=${page}&format=json&nojsoncallback=1`)
             .then(response => {
-                console.log(response.data.photos.photo);
+                console.log(response);
                 this.setState({
                     photos: [...photos, ...response.data.photos.photo],
                     scrolling: false,
