@@ -6,4 +6,4 @@ Run `node server/server`. Server will start on `http://localhost:3001`
 
 ## Start Development server
 
-Run `npm start` for a dev server. Navigate to `http://localhost:3000/` to view the app.
+Run `npm start` for a dev server. Navigate to `http://localhost:3000` to view the app.
