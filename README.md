@@ -1,6 +1,6 @@
 # How to run the app
 
-## Start node server
+## Start node.js server
 
 Run `node server/server`. Server will start on `http://localhost:3001`
 
