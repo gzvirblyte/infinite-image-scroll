@@ -1,8 +1,8 @@
 # How to run the app
 
-## Run node server
+## Start node server
 
-node server/server. Server will start on `http://localhost:3001`
+Run `node server/server`. Server will start on `http://localhost:3001`
 
 ## Start Development server
 
