@@ -39,10 +39,8 @@ class Photos extends React.Component {
 
     loadPhotos = () => {
         const { perpage, page, photos } = this.state;
-        //axios.get(`http://localhost:3000/photos`)
-            axios.get(`https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=00ac5f70d662304b87e7da585bbdef9d&gallery_id=72157713970734808&per_page=${perpage}&page=${page}&format=json&nojsoncallback=1`)
+        axios.get(`http://localhost:3001/photos/${perpage}/${page}`)
             .then(response => {
-                console.log(response);
                 this.setState({
                     photos: [...photos, ...response.data.photos.photo],
                     scrolling: false,
@@ -69,7 +67,7 @@ class Photos extends React.Component {
         let photos = this.state.photos;
         return (
             <div className="container">
-                <button onClick={this.sort} className="waves-effect waves-light btn-large">SORT ALPHABETICALLY</button>
+                <button onClick={this.sort} className="btn-large cyan darken-2">SORT ALPHABETICALLY</button>
                 {photos.map(photo =>
                     <div className="col s12" key={photo.id}>
                         <div className="card horizontal">
