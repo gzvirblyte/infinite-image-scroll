@@ -1,6 +1,6 @@
 # How to run the app
 
-## Install Express server
+## Install Express for node.js
 
 Run `npm install express --save`
 
